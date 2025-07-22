@@ -1,0 +1,24 @@
+# .air.toml
+root = "."                # project root
+tmp_dir = "tmp"           # tempat build binary sementara
+
+[build]
+  # Build command: masuk ke folder cmd/server dan build main.go
+  cmd = "go build -o ./tmp/main ./cmd/server"
+
+  # Binary hasil build akan dijalankan oleh air
+  bin = "tmp/main"
+  full_bin = "tmp/main"
+
+  # File-file yang ditonton
+  include_ext = ["go", "tpl", "tmpl", "html"]
+  exclude_dir = ["tmp", "vendor"]
+
+[log]
+  time = true
+
+[color]
+  main = "yellow"
+  watcher = "cyan"
+  build = "green"
+  runner = "magenta"
